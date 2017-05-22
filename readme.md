@@ -2,6 +2,8 @@
 
 > Copy text to the clipboard in modern browsers *(0.2 kB)*
 
+[Try it out!](https://jsfiddle.net/sindresorhus/6406v3pf/)
+
 
 ## Comparison
 
