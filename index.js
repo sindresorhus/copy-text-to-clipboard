@@ -2,7 +2,7 @@
 module.exports = input => {
 	let success = false;
 
-  //check for support (not support in Andoid Browser, in Safari 9, in mobile Safari 8, etc...)
+  //check for support (http://caniuse.com/#feat=document-execcommand)
 	if (document.execCommand) {
 		const el = document.createElement('textarea');
 
