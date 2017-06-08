@@ -14,7 +14,7 @@ module.exports = input => {
 	el.style.fontSize = '12pt'; // Prevent zooming on iOS
 
 	document.body.appendChild(el);
-	el.select();
+	select(el);
 
 	let success = false;
 	try {
