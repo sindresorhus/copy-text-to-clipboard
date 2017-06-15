@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			const module = {
+				exports: {}
+			};
+		</script>
+		<script src="index.js"></script>
+		<script>
+			const copyTextToClipboard = module.exports;
+
+			const getUnicorns = count => '🦄'.repeat(count);
+
+			const button = document.createElement('button');
+			button.textContent = 'Copy 🦄';
+			button.style.fontSize = '40px';
+			document.body.appendChild(button);
+
+			let i = 1;
+			button.addEventListener('click', () => {
+				copyTextToClipboard(getUnicorns(i));
+				button.textContent = `Copy ${getUnicorns(++i)}`;
+			});
+		</script>
+	</body>
+</html>
