@@ -13,7 +13,10 @@ module.exports = input => {
 	el.style.fontSize = '12pt'; // Prevent zooming on iOS
 
 	const selection = getSelection();
-	const originalRange = selection.getRangeAt(0);
+	let originalRange = false;
+	try {
+		originalRange = selection.getRangeAt(0);
+	} catch (err) {}
 
 	document.body.appendChild(el);
 	el.select();
@@ -25,8 +28,10 @@ module.exports = input => {
 
 	document.body.removeChild(el);
 
-	selection.removeAllRanges();
-	selection.addRange(originalRange);
+	if (originalRange) {
+		selection.removeAllRanges();
+		selection.addRange(originalRange);
+	}
 
 	return success;
 };
