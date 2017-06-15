@@ -14,9 +14,9 @@ module.exports = input => {
 
 	const selection = getSelection();
 	let originalRange = false;
-	try {
+	if (selection.rangeCount > 0) {
 		originalRange = selection.getRangeAt(0);
-	} catch (err) {}
+	}
 
 	document.body.appendChild(el);
 	el.select();
