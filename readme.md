@@ -24,7 +24,7 @@ $ npm install copy-text-to-clipboard
 const copy = require('copy-text-to-clipboard');
 
 button.addEventListener('click', () => {
-	copy('🦄🌈');
+	copy('🦄🌈'');
 });
 ```
 
