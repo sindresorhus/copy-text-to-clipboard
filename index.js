@@ -20,6 +20,8 @@ module.exports = input => {
 
 	document.body.appendChild(el);
 	el.select();
+	el.selectionStart = 0;
+	el.selectionEnd = input.length;
 
 	let success = false;
 	try {
