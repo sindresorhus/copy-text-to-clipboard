@@ -21,6 +21,10 @@ module.exports = input => {
 	document.body.appendChild(el);
 	el.select();
 
+	// Explicit selection workaround for iOS
+	el.selectionStart = 0;
+	el.selectionEnd = input.length;
+
 	let success = false;
 	try {
 		success = document.execCommand('copy');
