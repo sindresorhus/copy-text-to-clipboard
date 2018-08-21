@@ -1,5 +1,5 @@
 'use strict';
-module.exports = input => {
+module.exports = function (input) {
 	const el = document.createElement('textarea');
 
 	el.value = input;
