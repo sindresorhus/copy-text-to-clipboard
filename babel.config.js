@@ -3,7 +3,7 @@ const presets = [
     "@babel/env",
     {
       targets: {
-        firefox: "50"
+        firefox: "44"
       },
       useBuiltIns: "usage",
     },

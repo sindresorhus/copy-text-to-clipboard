@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = input => {
+module.exports = function (input) {
   var el = document.createElement('textarea');
   el.value = input; // Prevent keyboard from showing on mobile
 
