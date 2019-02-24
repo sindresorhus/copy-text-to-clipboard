@@ -1,3 +1,3 @@
-declare const copyToClipboard: { (data: string): void; };
+declare const copyToClipboard: { (data: string): boolean; };
 
 export default copyToClipboard;
