@@ -18,7 +18,7 @@ module.exports = input => {
 		originalRange = selection.getRangeAt(0);
 	}
 
-	document.body.appendChild(el);
+	document.body.append(el);
 	el.select();
 
 	// Explicit selection workaround for iOS
@@ -28,7 +28,7 @@ module.exports = input => {
 	let success = false;
 	try {
 		success = document.execCommand('copy');
-	} catch (err) {}
+	} catch (error) {}
 
 	document.body.removeChild(el);
 
