@@ -28,6 +28,7 @@
     "modern"
   ],
   "devDependencies": {
+    "tsd-check": "^0.3.0",
     "xo": "*"
   },
   "xo": {
