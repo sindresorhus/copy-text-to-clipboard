@@ -1,5 +1,5 @@
 'use strict';
-module.exports = input => {
+const copyTextToClipboard = input => {
 	const el = document.createElement('textarea');
 
 	el.value = input;
@@ -18,7 +18,7 @@ module.exports = input => {
 		originalRange = selection.getRangeAt(0);
 	}
 
-	document.body.appendChild(el);
+	document.body.appendChild(el); // eslint-disable-line unicorn/prefer-node-append
 	el.select();
 
 	// Explicit selection workaround for iOS
@@ -28,7 +28,7 @@ module.exports = input => {
 	let success = false;
 	try {
 		success = document.execCommand('copy');
-	} catch (err) {}
+	} catch (error) {}
 
 	document.body.removeChild(el);
 
@@ -39,3 +39,6 @@ module.exports = input => {
 
 	return success;
 };
+
+module.exports = copyTextToClipboard;
+module.exports.default = copyTextToClipboard;

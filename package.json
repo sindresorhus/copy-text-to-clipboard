@@ -10,13 +10,14 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo && tsd-check"
   },
   "files": [
-    "index.js"
+		"index.js",
+		"index.d.ts"
   ],
   "keywords": [
     "copy",
@@ -27,7 +28,8 @@
     "modern"
   ],
   "devDependencies": {
-    "xo": "*"
+    "tsd-check": "^0.3.0",
+    "xo": "^0.24.0"
   },
   "xo": {
     "envs": [
