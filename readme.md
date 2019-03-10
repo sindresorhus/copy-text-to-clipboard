@@ -35,7 +35,7 @@ button.addEventListener('click', () => {
 
 Copy `text` to the clipboard.
 
-Returns a `boolean` of whether it succeeded.
+Returns a `boolean` of whether it succeeded to copy the text.
 
 Must be called in response to a user gesture event, like `click` or `keyup`.
 

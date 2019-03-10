@@ -1,39 +1,39 @@
 {
-  "name": "copy-text-to-clipboard",
-  "version": "1.0.4",
-  "description": "Copy text to the clipboard in modern browsers (0.2 kB)",
-  "license": "MIT",
-  "repository": "sindresorhus/copy-text-to-clipboard",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=6"
-  },
-  "scripts": {
-    "test": "xo && tsd-check"
-  },
-  "files": [
+	"name": "copy-text-to-clipboard",
+	"version": "1.0.4",
+	"description": "Copy text to the clipboard in modern browsers (0.2 kB)",
+	"license": "MIT",
+	"repository": "sindresorhus/copy-text-to-clipboard",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && tsd-check"
+	},
+	"files": [
 		"index.js",
 		"index.d.ts"
-  ],
-  "keywords": [
-    "copy",
-    "text",
-    "clipboard",
-    "browser",
-    "clipboard.js",
-    "modern"
-  ],
-  "devDependencies": {
-    "tsd-check": "^0.3.0",
-    "xo": "^0.24.0"
-  },
-  "xo": {
-    "envs": [
-      "browser"
-    ]
-  }
+	],
+	"keywords": [
+		"copy",
+		"text",
+		"clipboard",
+		"browser",
+		"clipboard.js",
+		"modern"
+	],
+	"devDependencies": {
+		"tsd-check": "^0.3.0",
+		"xo": "^0.24.0"
+	},
+	"xo": {
+		"envs": [
+			"browser"
+		]
+	}
 }

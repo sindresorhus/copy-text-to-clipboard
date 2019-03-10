@@ -1,16 +1,17 @@
 'use strict';
-const copyTextToClipboard = input => {
-	const el = document.createElement('textarea');
 
-	el.value = input;
+const copyTextToClipboard = input => {
+	const element = document.createElement('textarea');
+
+	element.value = input;
 
 	// Prevent keyboard from showing on mobile
-	el.setAttribute('readonly', '');
+	element.setAttribute('readonly', '');
 
-	el.style.contain = 'strict';
-	el.style.position = 'absolute';
-	el.style.left = '-9999px';
-	el.style.fontSize = '12pt'; // Prevent zooming on iOS
+	element.style.contain = 'strict';
+	element.style.position = 'absolute';
+	element.style.left = '-9999px';
+	element.style.fontSize = '12pt'; // Prevent zooming on iOS
 
 	const selection = document.getSelection();
 	let originalRange = false;
@@ -18,26 +19,26 @@ const copyTextToClipboard = input => {
 		originalRange = selection.getRangeAt(0);
 	}
 
-	document.body.appendChild(el); // eslint-disable-line unicorn/prefer-node-append
-	el.select();
+	document.body.append(element);
+	element.select();
 
 	// Explicit selection workaround for iOS
-	el.selectionStart = 0;
-	el.selectionEnd = input.length;
+	element.selectionStart = 0;
+	element.selectionEnd = input.length;
 
-	let success = false;
+	let isSuccess = false;
 	try {
-		success = document.execCommand('copy');
-	} catch (error) {}
+		isSuccess = document.execCommand('copy');
+	} catch (_) {}
 
-	document.body.removeChild(el);
+	element.remove();
 
 	if (originalRange) {
 		selection.removeAllRanges();
 		selection.addRange(originalRange);
 	}
 
-	return success;
+	return isSuccess;
 };
 
 module.exports = copyTextToClipboard;
