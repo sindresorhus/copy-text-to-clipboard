@@ -1,4 +1,4 @@
-import {expectType} from 'tsd-check';
-import copyTextToClipboard from '.';
+import {expectType} from 'tsd';
+import copyTextToClipboard = require('.');
 
 expectType<boolean>(copyTextToClipboard('🦄🌈'));

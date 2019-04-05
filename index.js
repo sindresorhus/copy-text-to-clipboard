@@ -42,4 +42,5 @@ const copyTextToClipboard = input => {
 };
 
 module.exports = copyTextToClipboard;
+// TODO: Remove this for the next major release
 module.exports.default = copyTextToClipboard;
