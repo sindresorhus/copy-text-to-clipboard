@@ -32,9 +32,6 @@ const copyTextToClipboard = input => {
 		isSuccess = document.execCommand('copy');
 	} catch (_) {}
 
-	// Get the focus back on previously focused element
-	previouslyFocusedElement.focus();
-
 	element.remove();
 
 	if (originalRange) {
@@ -42,6 +39,11 @@ const copyTextToClipboard = input => {
 		selection.addRange(originalRange);
 	}
 
+	// Get the focus back on previously focused element, if any
+	if (previouslyFocusedElement) {
+		previouslyFocusedElement.focus();
+	}
+	
 	return isSuccess;
 };
 
