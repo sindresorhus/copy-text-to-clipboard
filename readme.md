@@ -43,8 +43,3 @@ Must be called in response to a user gesture event, like `click` or `keyup`.
 ## Related
 
 - [clipboardy](https://github.com/sindresorhus/clipboardy) - Access the system clipboard (copy/paste) in Node.js
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
