@@ -2,6 +2,7 @@
 
 const copyTextToClipboard = input => {
 	const element = document.createElement('textarea');
+	const previouslyFocusedElement = document.activeElement;
 
 	element.value = input;
 
@@ -36,6 +37,11 @@ const copyTextToClipboard = input => {
 	if (originalRange) {
 		selection.removeAllRanges();
 		selection.addRange(originalRange);
+	}
+
+	// Get the focus back on the previously focused element, if any
+	if (previouslyFocusedElement) {
+		previouslyFocusedElement.focus();
 	}
 
 	return isSuccess;
