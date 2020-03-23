@@ -1,6 +1,6 @@
 'use strict';
 
-const copyTextToClipboard = input => {
+const copyTextToClipboard = (input, target = document.body) => {
 	const element = document.createElement('textarea');
 	const previouslyFocusedElement = document.activeElement;
 
@@ -20,7 +20,7 @@ const copyTextToClipboard = input => {
 		originalRange = selection.getRangeAt(0);
 	}
 
-	document.body.append(element);
+	target.append(element);
 	element.select();
 
 	// Explicit selection workaround for iOS
