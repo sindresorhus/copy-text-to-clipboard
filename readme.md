@@ -31,9 +31,11 @@ button.addEventListener('click', () => {
 
 ## API
 
-### copy(text)
+### copy(text [, target])
 
 Copy `text` to the clipboard.
+
+Optionally specify a `target` DOM element (`document.body` by default) where the temporary, behind-the-scenes `textarea` should be appended. Use in cases where you need to stay within a focus trap for instance.
 
 Returns a `boolean` of whether it succeeded to copy the text.
 
