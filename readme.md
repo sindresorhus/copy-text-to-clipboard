@@ -31,7 +31,7 @@ button.addEventListener('click', () => {
 
 ## API
 
-### copy(text [, target])
+### copy(text, target?)
 
 Copy `text` to the clipboard.
 
