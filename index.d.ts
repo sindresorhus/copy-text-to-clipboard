@@ -1,3 +1,18 @@
+/// <reference lib="dom" />
+
+declare namespace copyTextToClipboard {
+	interface Options {
+		/**
+		Allow overriding the append target, for instance to stay within modal focus traps.
+
+		Note: Only specify this when there’s a known need for it.
+
+		@default: Document.body
+		*/
+		target?: HTMLElement;
+	}
+}
+
 declare const copyTextToClipboard: {
 	/**
 	Copy text to the clipboard.
@@ -15,8 +30,20 @@ declare const copyTextToClipboard: {
 		copy('🦄🌈');
 	});
 	```
+
+	@example
+	```
+	import copy = require('copy-text-to-clipboard');
+	const modalWithFocusTrap = document.getElementById('modal');
+
+	button.addEventListener('click', () => {
+		copy('🦄🌈', {
+			target: modalWithFocusTrap
+		});
+	});
+	```
 	*/
-	(text: string): boolean;
+	(text: string, options?: copyTextToClipboard.Options): boolean;
 
 	// TODO: Remove this for the next major release, refactor the whole definition to:
 	// declare function copyTextToClipboard(text: string): boolean;

@@ -1,6 +1,6 @@
 'use strict';
 
-const copyTextToClipboard = (input, target = document.body) => {
+const copyTextToClipboard = (input, { target = document.body } = {}) => {
 	const element = document.createElement('textarea');
 	const previouslyFocusedElement = document.activeElement;
 
