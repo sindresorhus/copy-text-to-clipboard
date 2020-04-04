@@ -39,9 +39,16 @@ Returns a `boolean` of whether it succeeded to copy the text.
 
 Must be called in response to a user gesture event, like `click` or `keyup`.
 
-### Options
+#### options
 
-- `target`: Optionally specify a DOM element (`document.body` by default) where the temporary, behind-the-scenes `textarea` should be appended. Specify this in cases where you need to stay within a focus trap, like in a modal.
+Type: `object`
+
+##### target
+
+Type: `HTMLElement`\
+Default: `document.body`
+
+Optionally specify a DOM element where the temporary, behind-the-scenes `textarea` should be appended. Specify this in cases where you need to stay within a focus trap, like in a modal.
 
 ## Related
 
