@@ -1,4 +1,4 @@
-/// <reference lib="dom" />
+/// <reference lib="dom"/>
 
 declare namespace copyTextToClipboard {
 	interface Options {
@@ -7,7 +7,20 @@ declare namespace copyTextToClipboard {
 
 		Note: Only specify this when there’s a known need for it.
 
-		@default: Document.body
+		@default document.body
+		
+		@example
+		```
+		import copy = require('copy-text-to-clipboard');
+
+		const modalWithFocusTrap = document.getElementById('modal');
+
+		button.addEventListener('click', () => {
+			copy('🦄🌈', {
+				target: modalWithFocusTrap
+			});
+		});
+		```
 		*/
 		target?: HTMLElement;
 	}
@@ -28,18 +41,6 @@ declare const copyTextToClipboard: {
 
 	button.addEventListener('click', () => {
 		copy('🦄🌈');
-	});
-	```
-
-	@example
-	```
-	import copy = require('copy-text-to-clipboard');
-	const modalWithFocusTrap = document.getElementById('modal');
-
-	button.addEventListener('click', () => {
-		copy('🦄🌈', {
-			target: modalWithFocusTrap
-		});
 	});
 	```
 	*/
