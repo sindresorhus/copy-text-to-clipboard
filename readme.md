@@ -31,7 +31,7 @@ button.addEventListener('click', () => {
 
 ## API
 
-### copy(text)
+### copy(text, options?)
 
 Copy `text` to the clipboard.
 
@@ -39,6 +39,16 @@ Returns a `boolean` of whether it succeeded to copy the text.
 
 Must be called in response to a user gesture event, like `click` or `keyup`.
 
+#### options
+
+Type: `object`
+
+##### target
+
+Type: `HTMLElement`\
+Default: `document.body`
+
+Specify a DOM element where the temporary, behind-the-scenes `textarea` should be appended, in cases where you need to stay within a focus trap, like in a modal.
 
 ## Related
 
