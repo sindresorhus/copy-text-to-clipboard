@@ -3,12 +3,10 @@
 declare namespace copyTextToClipboard {
 	interface Options {
 		/**
-		Allow overriding the append target, for instance to stay within modal focus traps.
-
-		Note: Only specify this when there’s a known need for it.
+		Specify a DOM element where the temporary, behind-the-scenes `textarea` should be appended, in cases where you need to stay within a focus trap, like in a modal.
 
 		@default document.body
-		
+
 		@example
 		```
 		import copy = require('copy-text-to-clipboard');
