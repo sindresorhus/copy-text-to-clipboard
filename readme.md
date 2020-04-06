@@ -4,19 +4,16 @@
 
 [Try it out!](https://jsfiddle.net/sindresorhus/6406v3pf/)
 
-
 ## Comparison
 
 - This module: **0.2 kB**
 - [`clipboard.js`](https://github.com/zenorocha/clipboard.js): 3.4 kB
-
 
 ## Install
 
 ```
 $ npm install copy-text-to-clipboard
 ```
-
 
 ## Usage
 
@@ -27,7 +24,6 @@ button.addEventListener('click', () => {
 	copy('🦄🌈');
 });
 ```
-
 
 ## API
 
