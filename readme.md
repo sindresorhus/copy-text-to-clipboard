@@ -1,4 +1,4 @@
-# copy-text-to-clipboard [![Build Status](https://travis-ci.org/sindresorhus/copy-text-to-clipboard.svg?branch=master)](https://travis-ci.org/sindresorhus/copy-text-to-clipboard)
+# copy-text-to-clipboard
 
 > Copy text to the clipboard in modern browsers *(0.2 kB)*
 
