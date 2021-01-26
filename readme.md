@@ -18,7 +18,7 @@ $ npm install copy-text-to-clipboard
 ## Usage
 
 ```js
-const copy = require('copy-text-to-clipboard');
+import copy from 'copy-text-to-clipboard'
 
 button.addEventListener('click', () => {
 	copy('🦄🌈');
