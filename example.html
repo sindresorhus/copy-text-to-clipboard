@@ -4,13 +4,9 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<script>
-			const module = {
-				exports: {}
-			};
-		</script>
-		<script src="index.js"></script>
-		<script>
+		<script type="module">
+			import copyTextToClipboard from './index.js';
+
 			const getUnicorns = count => '🦄'.repeat(count);
 
 			const button = document.createElement('button');
@@ -18,10 +14,10 @@
 			button.style.fontSize = '40px';
 			document.body.append(button);
 
-			let i = 1;
+			let index = 1;
 			button.addEventListener('click', () => {
-				copyTextToClipboard(getUnicorns(i));
-				button.textContent = `Copy ${getUnicorns(++i)}`;
+				copyTextToClipboard(getUnicorns(index));
+				button.textContent = `Copy ${getUnicorns(++index)}`;
 			});
 		</script>
 	</body>

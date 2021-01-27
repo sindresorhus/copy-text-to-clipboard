@@ -1,53 +1,42 @@
 /// <reference lib="dom"/>
 
-declare namespace copyTextToClipboard {
-	interface Options {
-		/**
-		Specify a DOM element where the temporary, behind-the-scenes `textarea` should be appended, in cases where you need to stay within a focus trap, like in a modal.
-
-		@default document.body
-
-		@example
-		```
-		import copy = require('copy-text-to-clipboard');
-
-		const modalWithFocusTrap = document.getElementById('modal');
-
-		button.addEventListener('click', () => {
-			copy('🦄🌈', {
-				target: modalWithFocusTrap
-			});
-		});
-		```
-		*/
-		target?: HTMLElement;
-	}
-}
-
-declare const copyTextToClipboard: {
+export interface Options {
 	/**
-	Copy text to the clipboard.
+	Specify a DOM element where the temporary, behind-the-scenes `textarea` should be appended, in cases where you need to stay within a focus trap, like in a modal.
 
-	Must be called in response to a user gesture event, like `click` or `keyup`.
-
-	@param text - The text to copy to clipboard.
-	@returns Whether it succeeded to copy the text.
+	@default document.body
 
 	@example
 	```
-	import copy = require('copy-text-to-clipboard');
+	import copy from 'copy-text-to-clipboard';
+
+	const modalWithFocusTrap = document.getElementById('modal');
 
 	button.addEventListener('click', () => {
-		copy('🦄🌈');
+		copy('🦄🌈', {
+			target: modalWithFocusTrap
+		});
 	});
 	```
 	*/
-	(text: string, options?: copyTextToClipboard.Options): boolean;
+	readonly target?: HTMLElement;
+}
 
-	// TODO: Remove this for the next major release, refactor the whole definition to:
-	// declare function copyTextToClipboard(text: string): boolean;
-	// export = copyTextToClipboard;
-	default: typeof copyTextToClipboard;
-};
+/**
+Copy text to the clipboard.
 
-export = copyTextToClipboard;
+Must be called in response to a user gesture event, like `click` or `keyup`.
+
+@param text - The text to copy to clipboard.
+@returns Whether it succeeded to copy the text.
+
+@example
+```
+import copy from 'copy-text-to-clipboard';
+
+button.addEventListener('click', () => {
+	copy('🦄🌈');
+});
+```
+*/
+export default function copyTextToClipboard(text: string): boolean;
