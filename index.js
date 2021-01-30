@@ -1,4 +1,4 @@
-const copyTextToClipboard = (input, {target = document.body} = {}) => {
+export default function copyTextToClipboard (input, {target = document.body} = {}) {
 	const element = document.createElement('textarea');
 	const previouslyFocusedElement = document.activeElement;
 
@@ -44,5 +44,3 @@ const copyTextToClipboard = (input, {target = document.body} = {}) => {
 
 	return isSuccess;
 };
-
-export default copyTextToClipboard;
