@@ -43,4 +43,4 @@ export default function copyTextToClipboard(input, {target = document.body} = {}
 	}
 
 	return isSuccess;
-};
+}
