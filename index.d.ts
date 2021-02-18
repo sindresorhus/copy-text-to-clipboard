@@ -39,4 +39,4 @@ button.addEventListener('click', () => {
 });
 ```
 */
-export default function copyTextToClipboard(text: string): boolean;
+export default function copyTextToClipboard(text: string, options?: Options): boolean;
