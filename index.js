@@ -13,10 +13,7 @@ export default function copyTextToClipboard(input, {target = document.body} = {}
 	element.style.fontSize = '12pt'; // Prevent zooming on iOS
 
 	const selection = document.getSelection();
-	let originalRange = false;
-	if (selection.rangeCount > 0) {
-		originalRange = selection.getRangeAt(0);
-	}
+	const originalRange = selection.rangeCount > 0 && selection.getRangeAt(0);
 
 	target.append(element);
 	element.select();
