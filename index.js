@@ -25,7 +25,7 @@ export default function copyTextToClipboard(input, {target = document.body} = {}
 	let isSuccess = false;
 	try {
 		isSuccess = document.execCommand('copy');
-	} catch {}
+	} catch (ignore) {}
 
 	element.remove();
 
