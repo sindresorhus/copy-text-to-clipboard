@@ -1,8 +1,12 @@
-export default function copyTextToClipboard(input, {target = document.body} = {}) {
+export default function copyTextToClipboard(text, {target = document.body} = {}) {
+	if (typeof text !== 'string') {
+		throw new TypeError(`Expected parameter \`text\` to be a \`string\`, got \`${typeof text}\`.`);
+	}
+
 	const element = document.createElement('textarea');
 	const previouslyFocusedElement = document.activeElement;
 
-	element.value = input;
+	element.value = text;
 
 	// Prevent keyboard from showing on mobile
 	element.setAttribute('readonly', '');
@@ -20,7 +24,7 @@ export default function copyTextToClipboard(input, {target = document.body} = {}
 
 	// Explicit selection workaround for iOS
 	element.selectionStart = 0;
-	element.selectionEnd = input.length;
+	element.selectionEnd = text.length;
 
 	let isSuccess = false;
 	try {

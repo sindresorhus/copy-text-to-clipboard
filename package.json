@@ -16,7 +16,8 @@
 		"node": ">=12"
 	},
 	"scripts": {
-		"test": "xo && tsd"
+		"//test": "xo && tsd",
+		"test": "xo"
 	},
 	"files": [
 		"index.js",

@@ -11,8 +11,8 @@
 
 ## Install
 
-```
-$ npm install copy-text-to-clipboard
+```sh
+npm install copy-text-to-clipboard
 ```
 
 ## Usage
