@@ -11,9 +11,20 @@ export default function copyTextToClipboard(text, {target = document.body} = {})
 	// Prevent keyboard from showing on mobile
 	element.setAttribute('readonly', '');
 
+	// Reset all inherited styles to prevent CSS interference
+	element.style.all = 'unset';
+
+	// Apply minimal required styles
 	element.style.contain = 'strict';
 	element.style.position = 'absolute';
 	element.style.left = '-9999px';
+	element.style.width = '2em';
+	element.style.height = '2em';
+	element.style.padding = '0';
+	element.style.border = 'none';
+	element.style.outline = 'none';
+	element.style.boxShadow = 'none';
+	element.style.background = 'transparent';
 	element.style.fontSize = '12pt'; // Prevent zooming on iOS
 
 	const selection = document.getSelection();
