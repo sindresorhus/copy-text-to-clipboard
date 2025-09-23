@@ -26,6 +26,7 @@ export default function copyTextToClipboard(text, {target = document.body} = {})
 	element.style.boxShadow = 'none';
 	element.style.background = 'transparent';
 	element.style.fontSize = '12pt'; // Prevent zooming on iOS
+	element.style.whiteSpace = 'pre'; // Preserve whitespace (tabs, spaces, newlines)
 
 	const selection = document.getSelection();
 	const originalRange = selection.rangeCount > 0 && selection.getRangeAt(0);

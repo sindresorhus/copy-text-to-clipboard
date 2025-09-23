@@ -4,20 +4,41 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
+		<button id="unicorn-button" style="font-size: 40px;">Copy 🦄</button>
+
+		<hr>
+
+		<h3>Whitespace Test</h3>
+		<pre id="code-sample" style="background: #f5f5f5; padding: 10px;">function example() {
+	console.log("tab indented");
+	const x = "multiple    spaces";
+}</pre>
+		<button id="code-button">Copy Code</button>
+		<br><br>
+		<textarea id="test-area" style="width: 400px; height: 100px; font-family: monospace;" placeholder="Paste here to verify whitespace..."></textarea>
+
 		<script type="module">
 			import copyTextToClipboard from './index.js';
 
 			const getUnicorns = count => '🦄'.repeat(count);
-
-			const button = document.createElement('button');
-			button.textContent = 'Copy 🦄';
-			button.style.fontSize = '40px';
-			document.body.append(button);
-
+			const unicornButton = document.getElementById('unicorn-button');
 			let index = 1;
-			button.addEventListener('click', () => {
+			unicornButton.addEventListener('click', () => {
 				copyTextToClipboard(getUnicorns(index));
-				button.textContent = `Copy ${getUnicorns(++index)}`;
+				unicornButton.textContent = `Copy ${getUnicorns(++index)}`;
+			});
+
+			document.getElementById('code-button').addEventListener('click', () => {
+				const text = document.getElementById('code-sample').textContent;
+				copyTextToClipboard(text);
+			});
+
+			document.getElementById('test-area').addEventListener('paste', () => {
+				setTimeout(() => {
+					const original = document.getElementById('code-sample').textContent;
+					const pasted = document.getElementById('test-area').value;
+					document.getElementById('test-area').style.borderColor = original === pasted ? 'green' : 'red';
+				}, 0);
 			});
 		</script>
 	</body>
