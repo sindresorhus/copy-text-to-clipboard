@@ -1,6 +1,6 @@
 {
 	"name": "copy-text-to-clipboard",
-	"version": "3.2.1",
+	"version": "3.2.2",
 	"description": "Copy text to the clipboard in modern browsers (0.2 kB)",
 	"license": "MIT",
 	"repository": "sindresorhus/copy-text-to-clipboard",
