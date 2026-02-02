@@ -15,6 +15,9 @@
 npm install copy-text-to-clipboard
 ```
 
+> [!TIP]
+> Consider using [`navigator.clipboard.writeText(text)`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) directly. Keep in mind that the native API requires a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) (HTTPS). This package works in non-secure contexts too.
+
 ## Usage
 
 ```js
